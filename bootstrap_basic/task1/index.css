@@ -1,0 +1,55 @@
+.navbar-nav {
+    position: relative;
+    left: 30%;
+}
+.container .navbar-brand {
+    color: rgb(54, 52, 161);
+    font-weight: bold;
+}
+.collapse ul li {
+    padding: 0 20px;
+}
+.collapse ul li a {
+    font-weight: bold;
+}
+.card {
+    border: none;
+}
+.content {
+    margin-top: 100px;
+}
+.card .card-body {
+    padding: 50px 0;
+}
+.card .card-body p {
+    padding: 25px;
+}
+.icon {
+    text-align: center;
+}
+.icon i {
+    background-color: rgb(72, 137, 235);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+.icon h6 {
+    margin-top: 20px;
+}
+
+@media (max-width: 576px) { 
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .list-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+ }
+ @media (max-width: 768px) { 
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+ }

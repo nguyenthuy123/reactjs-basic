@@ -1,0 +1,56 @@
+.container-fluid {
+    background-color: #f2f6fc;
+}
+.container .header {
+    padding: 20px 0;
+    border-bottom: 1px solid #d4dae3;
+}
+.container .header {
+    justify-content: space-between;
+}
+.title .card {
+    width: 50%;
+    border: none;
+    height: 300px;
+}
+.title .card .card-body {
+    padding: 30px 20px;
+}
+.title .card .card-body .card-text {
+    padding: 10px 0;
+}
+.title .card img {
+    height: 300px;
+}
+.main .card-modal {
+    position: relative;
+    top: 10rem;
+    left: 20px;
+}
+.main .content .title .card-image img {
+    width: 50%;
+    height: 20%;
+    margin-top: 2rem;
+}
+.main .content {
+    width: 70%;
+}
+.main .content .title .card-content{
+    width: 70%;
+}
+.main .content .title .card-image {
+    width: 30%;
+}
+.main .card-modal .modal-dialog .modal-opinion .modal-body img {
+    
+    width: 15%;
+    height: 50%;
+}
+.main .card-modal .modal-dialog .modal-opinion .modal-body .modal-content {
+    border: none;
+    margin-left: 15px;
+}
+.main .card-modal .modal-dialog .modal-opinion .modal-body .modal-content p:last-child {
+    color: gray;
+}
+
