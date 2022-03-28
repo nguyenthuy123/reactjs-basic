@@ -1,12 +1,14 @@
 import './App.css';
-import Form from './Form';
 import Pagination from './Pagination';
+import ValidateForm from './ValidateForm';
+import Content from './Content';
 
 function App() {
   return (
     <div className="App">
-        {/* <Form/> */}
-        <Pagination/>
+        {/* <Pagination /> */}
+        {/* <ValidateForm/> */}
+        <Content />
     </div>
   );
 }

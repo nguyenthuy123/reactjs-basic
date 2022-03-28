@@ -1,69 +1,72 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import ReactPaginate from 'react-paginate';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Example items, to simulate fetching from another resources.
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-
-function Items({ currentItems }) {
-  return (
-    <>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div>
-            <h3>Item #{item}</h3>
-          </div>
-        ))}
-    </>
-  );
-}
-
-function Pagination({ itemsPerPage }) {
-  // We start with an empty list of items.
-  const [currentItems, setCurrentItems] = useState(null);
+function Pagination() {
+  const [postsPerPage] = useState(5);
+  const [offset, setOffset] = useState(1);
+  const [posts, setAllPosts] = useState([]);
   const [pageCount, setPageCount] = useState(0);
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
+
+  const getPostData = (data) => {
+    return ( 
+      data.map((post) => {
+        <div className="container" key={post.id}>
+          User ID: {post.id}
+          Title: {post.title}
+        </div>
+      }
+    )
+    )
+  }
+
+  const getAllPosts = async () => {
+    const res = await   axios.get(`https://jsonplaceholder.typicode.com/posts`)
+    const data = res.data;
+    const slice = data.slice(offset - 1 , offset - 1 + postsPerPage)
+  
+    // For displaying Data
+    const postData = getPostData(slice)
+  
+    // Using Hooks to set value
+    setAllPosts(postData)
+    setPageCount(Math.ceil(data.length / postsPerPage))
+  }
+
+  // const handlePageClick = (e) => {
+  //   const selectedPage = e.selected;
+  //   setOffset(selectedPage + 1)
+  // };
 
   useEffect(() => {
-    // Fetch items from another resources.
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setCurrentItems(items.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(items.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+    getAllPosts()
+  }, [offset])
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
+    const selectedPage = event.selected;
+    setOffset(selectedPage + 1)
   };
 
   return (
-    <>
-      <Items currentItems={currentItems} />
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
-    </>
-  );
-}
-
-// Add a <div id="container"> to your HTML to see the componend rendered.
-ReactDOM.render(
-  <Pagination itemsPerPage={4} />,
-  document.getElementById('container')
+    < div className="main-app" >
+    
+     { /* Display all the posts  */ }
+     { posts }
+ 
+     { /* Using React Paginate */ }
+     < ReactPaginate
+       previousLabel={"previous" }
+       nextLabel={ "next" }
+       breakLabel={ "..." }
+       breakClassName={ "break-me" }
+       pageCount={ pageCount }
+       onPageChange={ handlePageClick }
+       containerClassName={ "pagination" }
+       subContainerClassName={ "pages pagination" }
+       activeClassName={ "active" } 
+       / >
+   </div>
 );
+}
 export default Pagination;

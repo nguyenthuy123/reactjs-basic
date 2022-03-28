@@ -1,0 +1,12 @@
+.layout {
+    width: 100%;
+}
+.layout .header {
+    width: 100%;
+}
+.layout .main-flex {
+    display: flex;
+}
+.layout .main-flex .sidebar {
+    width: 250px;
+}
