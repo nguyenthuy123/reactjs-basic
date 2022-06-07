@@ -1,0 +1,134 @@
+.main-create {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+}
+.main-create .notify {
+    width: 50%;
+    border: 1px solid rgb(213, 208, 208);
+    padding: 0.5rem;
+    border-radius:5px;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.main-create .notify .danger {
+    width: 100%;
+    padding: 0.2rem;
+    text-align: center;   
+    background-color: rgb(248 113 113);
+    color: rgb(153 27 27);
+    border-radius: 5px;
+}
+.main-create .notify .primary {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    /* border: 1px solid gray; */
+    background-color: rgb(52 211 153);
+    color: rgb(6 95 70);
+    border-radius: 5px;
+}
+.input-title {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.input-title input {
+    background-color:transparent;
+    border-bottom: 1px solid rgb(175, 170, 170);
+    outline:none;
+    margin-left: 10px;
+    width: 100%;
+}
+.select-category {
+    margin-top:10px;
+    width: 100%;
+}
+.select-category select {
+    width: 100%;
+    padding: 0.2rem;
+}
+.upload {
+    border: 1px solid rgb(175, 170, 170);
+    height: 80vh;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+.upload .loader {
+    width: 100%;  
+}
+.upload .loader .upload-img {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+.upload .loader .upload-img .upload-icon {
+  font-size:1.5rem;
+}
+.upload .loader .upload-img .upload-input {
+    position: absolute;
+}
+.calories {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.calories input {
+    background-color:transparent;
+    outline:none;
+    border-bottom: 1px solid rgb(197, 190, 190);
+}
+.upload-calories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.upload-calories .calories-price {
+    width: 100%;
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.save {
+    background-color:green;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.2rem;
+    color: white;
+}
+[type="file"] {
+    /* Style the color of the message that says 'No file chosen' */
+      color: rgb(245 243 243);
+}
+[type="file"]::-webkit-file-upload-button {
+    border: none;
+    color: rgb(245 243 243);
+    background-color:rgb(245 243 243)
+}
+.imageSet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.imageSet .delete-icon {
+    font-size: 1.5rem;
+    color:white;
+    padding: 2px;
+    border-radius:50%;
+    background-color:red;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 2.5rem;
+}

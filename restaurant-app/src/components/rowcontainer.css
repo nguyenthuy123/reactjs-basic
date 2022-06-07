@@ -1,0 +1,39 @@
+.container {
+    width:100%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23% ;
+    grid-gap: 20px;
+  
+   
+}
+.container .row-fruits {
+    width: 100%;
+    display: flex;
+    background-color: rgb(229 231 235);
+    border-radius: 10px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.container .row-fruits img {
+    width: 50%;
+}
+.container .row-fruits .fruits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute;
+    left:9rem;
+    top: 1rem; */
+}
+.container .row-fruits .fruits .round {
+    background-color: rgb(225 29 72);
+    padding: 5px;
+    width: 1.5rem;
+    border-radius:50%
+}
+.container .row-fruits .fruits .round .basket-icon {
+    color: white
+}

@@ -1,0 +1,78 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.city {
+    font-weight:bold
+}
+ul li {
+    padding: 15px;
+    cursor: pointer;
+}
+ul li:hover {
+    color: rgb(30 64 175)
+}
+.icons {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    position: relative;
+}
+.icons .icons-basket {
+    font-size:1.5rem;
+}
+.icons .icons-text {
+    width:15px;
+    height:15px;
+    background-color:#e80013;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right:10.5rem;
+}
+.icons .icons-text .text {
+    font-size:10px;
+    color: rgb(241 245 249)
+}
+.icons .basket-custom {
+    font-size:1.5rem;
+}
+.icons .text-custom {
+    font-size: 11px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background-color:red;
+    color:white;
+    border-radius:50%;
+}
+.create-new {
+    background-color: white;
+    width: 7rem;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    border-radius: 5px;
+    text-align: center;
+    padding:5px;
+}
+.create-new .logout {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding:2px;
+    border-radius: 5px;
+}
+.create-new .logout:first-child:hover {
+    background-color:rgb(226 232 240);
+}
+.create-new .logout:last-child:hover {
+    background-color:rgb(226 232 240);
+}
